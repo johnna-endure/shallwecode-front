@@ -1,13 +1,21 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+// import Sample from "./Sample.jsx";
+import Login from './pages/Login.jsx'
 
 function App() {
+
+    // const onChange =() => {
+    //     console.log('dkdkdkdk')
+    // }
+    //
+    // const name = '허허'
+
   return (
     <div className="App">
-        <h1 className="text-3xl font-bold underline">
-            Hello world!
-        </h1>
+        <Login/>
+        {/*<Sample onChange={onChange} name={name}/>*/}
     </div>
   )
 }
