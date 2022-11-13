@@ -1,9 +1,9 @@
 import SLabeledInput from "../atoms/SLabeledInput.jsx";
 import SInput from "../atoms/SInput.jsx";
 
-export default() => {
+export default () => {
     return(
-        <div>
+        <div className="w-52 m-auto">
             <p className="mb-20 text-3xl font-bold">Sign Up</p>
             <SLabeledInput label="아이디" type="text" name="id" required />
             <br/>

@@ -4,7 +4,7 @@ import SInput from "../atoms/SInput.jsx";
 export default () => {
 
     return (
-        <div>
+        <div className="w-52 m-auto">
             <p className="mb-20 text-3xl font-bold">shall we code?</p>
             <SLabeledInput label="아이디" type="text" name="id" />
             <br/>
