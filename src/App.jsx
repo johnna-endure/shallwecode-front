@@ -1,8 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 // import Sample from "./Sample.jsx";
-import Login from './pages/Login.jsx'
+import SignUp from './pages/SignUp.jsx'
 
 function App() {
 
@@ -14,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-        <Login/>
+        {/*<SignUp/>*/}
         {/*<Sample onChange={onChange} name={name}/>*/}
     </div>
   )
