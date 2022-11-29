@@ -20,6 +20,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'Button',
+  onClick: () => alert('hi')
 };
 
 export const Secondary = Template.bind({});
