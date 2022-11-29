@@ -16,7 +16,7 @@ export default function ({head, onChangeForm, onSubmit}) {
       <div className="w-[300px] mx-auto mb-[20px]">
         <SLabeledInput label="아이디"
                        className="mx-auto"
-                       type="text" name="id" size={30} onChange={onChangeForm}/>
+                       type="text" name="loginId" size={30} onChange={onChangeForm}/>
         <br/>
         <SLabeledInput label="비밀번호" type="password" name="password" size={30}
                        onChange={onChangeForm}/>
@@ -27,8 +27,6 @@ export default function ({head, onChangeForm, onSubmit}) {
         <SInput className="px-6 py-2 rounded text-white bg-emerald-700" type="submit" value="로그인"
                 onClick={onSubmit}/>
       </div>
-
-
     </div>
   )
 }
