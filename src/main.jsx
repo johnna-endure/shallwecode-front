@@ -1,31 +1,39 @@
-import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ReactDOM from 'react-dom/client'
-import {createBrowserRouter, RouterProvider,} from 'react-router-dom';
+import React from 'react'
+
+import Login from './pages/login-page'
+import SignUp from './pages/signup-page'
+import ErrorPage from './pages/error-page'
+import Test from './test'
+
 import './index.css'
-import Login from './pages/login-page.jsx';
-import SignUp from './pages/signup-page.jsx';
-import ErrorPage from './pages/error-page.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Login/>,
-    errorElement: <ErrorPage/>,
+    path: '/',
+    element: <Login />,
+    errorElement: <ErrorPage />,
   },
   {
-    path: "login",
-    element: <Login/>,
-    errorElement: <ErrorPage/>,
+    path: 'login',
+    element: <Login />,
+    errorElement: <ErrorPage />,
   },
   {
-    path: "signup",
-    element: <SignUp/>,
-    errorElement: <ErrorPage/>,
-  }
-]);
+    path: 'signup',
+    element: <SignUp />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: 'test',
+    element: <Test />,
+    errorElement: <Test />,
+  },
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 )
