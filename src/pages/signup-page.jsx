@@ -1,5 +1,5 @@
 import SLabeledInput from '../atoms/SLabeledInput.jsx'
-import SInput from '../atoms/SInput.jsx'
+import SInput from '../atoms/SButton.jsx'
 
 export default () => {
   return (
@@ -7,11 +7,7 @@ export default () => {
       <p className="mb-20 text-3xl font-bold">Sign Up</p>
       <SLabeledInput label="아이디" type="text" name="id" required />
       <br />
-      <SLabeledInput
-        label="비밀번호"
-        type="password"
-        name="password"
-        />
+      <SLabeledInput label="비밀번호" type="password" name="password" />
 
       <br />
       <SLabeledInput
