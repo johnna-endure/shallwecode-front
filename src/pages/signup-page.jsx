@@ -1,5 +1,5 @@
-import SLabeledInput from '../atoms/SLabeledInput.jsx'
-import SInput from '../atoms/SButton.jsx'
+import SLabeledInput from '../atoms/s-labeled-input'
+import SInput from '../atoms/s-button'
 
 export default () => {
   return (

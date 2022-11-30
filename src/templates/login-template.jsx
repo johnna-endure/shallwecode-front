@@ -1,5 +1,5 @@
-import SLabeledInput from '../atoms/SLabeledInput.jsx'
-import SButton from '../atoms/SButton.jsx'
+import SLabeledInput from '../atoms/s-labeled-input'
+import SButton from '../atoms/s-button'
 
 /**
  * 로그인 페이지 템플릿
