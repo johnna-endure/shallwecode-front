@@ -1,13 +1,23 @@
-const api = 'http://localhost:8080'
+const BACKEND_API = 'http://localhost:8080'
 
-export async function requestLogin (data) {
-    const res = await fetch(`${api}/login`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
 
-        body: JSON.stringify(data)
-        })
-    return res
+const SHALLWECODE_ACCESS_TOKEN = "shallwecode_access_token"
+export async function postUserLogin(data) {
+  const res = await fetch(`${BACKEND_API}/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+
+    body: JSON.stringify(data),
+  })
+
+  if(res?.ok) {
+    const {user, token} = await res.json()
+    sessionStorage.removeItem(SHALLWECODE_ACCESS_TOKEN)
+    sessionStorage.setItem(SHALLWECODE_ACCESS_TOKEN, token)
+    return user
+  }
+
+  return null
 }
