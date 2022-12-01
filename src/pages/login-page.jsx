@@ -9,7 +9,12 @@ export default () => {
   })
 
   const handleLogin = () => {
-    postUserLogin(loginForm).then((data) => console.log('data:', data))
+    postUserLogin(loginForm).then((data) => {
+          if (data === null) {
+            alert('존재하는 회원이 아닙니다.')
+          }
+        console.log('성공', data)
+    }).catch((err)=>console.error('실패:', err))
   }
 
   const onChangeForm = ({ target: { name, value } }) => {
