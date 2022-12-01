@@ -1,7 +1,5 @@
 const BACKEND_API = 'http://localhost:8080'
 
-const SHALLWECODE_ACCESS_TOKEN = 'shallwecode_access_token'
-
 export async function postUserLogin(data) {
   const res = await fetch(`${BACKEND_API}/login`, {
     method: 'POST',
