@@ -31,9 +31,7 @@ export default function ({ head, onChangeForm, onSubmit }) {
       </div>
 
       {/*버튼 영역*/}
-      <div className="w-[300px] mx-auto">
-        <SButton className="bg-emerald-700" value="로그인" onClick={onSubmit} />
-      </div>
+        <SButton className="block m-auto bg-emerald-700" value="로그인" onClick={onSubmit} />
     </div>
   )
 }
