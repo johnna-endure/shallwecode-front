@@ -4,9 +4,8 @@ import React from 'react'
 
 import Login from './pages/login-page'
 import SignUp from './pages/signup-page'
+import Post from './pages/post-page.jsx'
 import ErrorPage from './pages/error-page'
-import Test from './test'
-
 import './index.css'
 
 const router = createBrowserRouter([
@@ -26,9 +25,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: 'test',
-    element: <Test />,
-    errorElement: <Test />,
+    path: 'post',
+    element: <Post />,
+    errorElement: <ErrorPage />,
   },
 ])
 

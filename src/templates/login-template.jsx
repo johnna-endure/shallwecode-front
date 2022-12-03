@@ -1,5 +1,5 @@
 import SLabeledInput from '../atoms/s-labeled-input'
-import SButton from '../atoms/s-button'
+import {STextButton} from '../atoms/s-button'
 
 /**
  * 로그인 페이지 템플릿
@@ -31,7 +31,7 @@ export default function ({ head, onChangeForm, onSubmit }) {
       </div>
 
       {/*버튼 영역*/}
-        <SButton className="block m-auto bg-emerald-700" value="로그인" onClick={onSubmit} />
+        <STextButton className="block m-auto" value="로그인" onClick={onSubmit} />
     </div>
   )
 }

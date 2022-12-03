@@ -1,12 +1,18 @@
-export default ({ className, type = 'submit', value, onClick }) => {
+function STextButton ({ className, type = 'submit', value, onClick }) {
   return (
-    <div>
       <input
-        className={`px-6 py-2 rounded text-white ${className}`}
+        className={`px-6 py-2 rounded text-white bg-emerald-700 ${className}`}
         type={type}
         value={value}
         onClick={onClick}
       />
-    </div>
   )
 }
+
+function SImageButton (){
+    return(
+        <></>
+    )
+}
+
+export {STextButton, SImageButton}
