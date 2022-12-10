@@ -3,7 +3,7 @@ import SLabeledInput from "../atoms/s-labeled-input";
 export default function () {
     return(
         <div className="flex w-full h-full">
-            <div className="m-auto w-3/4">
+            <div className="m-auto w-2/4">
                 <div className="mb-14 text-3xl font-bold">글 작성하기</div>
                 <SLabeledInput className="mb-10" label="제목"/>
 
