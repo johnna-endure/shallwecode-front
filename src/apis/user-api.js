@@ -19,3 +19,14 @@ export async function postUserLogin(data) {
 
   return null
 }
+
+export async function postUserSignUp (data) {
+    const res = await fetch(`${BACKEND_API}/user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+       return res.json()
+}

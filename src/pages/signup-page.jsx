@@ -1,86 +1,58 @@
+import {useState} from "react";
 import SLabeledInput from '../atoms/s-labeled-input'
 import {STextButton} from '../atoms/s-button'
-import {useState} from "react";
+
+import {postUserSignUp} from "../apis/user-api.js";
+
 
 export default function () {
     const [userForm, setUserForm] = useState({
-        id:'',
-        password:'',
-        passwordCheck:'',
-        email:'',
-        blogUrl:'',
-        githubUrl:''
+        loginId: null,
+        password: null,
+        name: null,
+        email: null,
+        blogUrl: null,
+        githubUrl: null
     })
 
-    // const [isShow, setIsShow] = useState(false)
-
-    //비밀번호 확인 메시지 플래그 왜 이건 안되지?? 왜 값이 안바뀌지?
-    let isShow = false
-
     function handleChange({target: {value, name}}) {
+        console.log('value', value)
         return(
+
             setUserForm({...userForm, [name]:value})
         )
     }
 
-    // function handleChange(e) {
-    //     return(
-    //         console.log('e', e)
-    //     )
-    // }
-    function checkPassword({target: {value}}) {
-        const initialPassword = document.querySelector("input[name = 'password']").value
-
-            if (initialPassword !== value) {
-                 return isShow = true
-            } else if (initialPassword === value) {
-                return isShow = false
-            }
-
+    function handleClickSignUp() {
+        postUserSignUp(userForm).then((data) => {
+            console.log('성공', data)
+        }).catch((err)=>console.error('실패:', err))
     }
 
-    // function checkPassword({target: {value}}) {
-    //     const initialPassword = document.querySelector("input[name = 'password']").value
-    //
-    //     if (initialPassword === value) {
-    //         setIsShow(false)
-    //     } else if (initialPassword !== value) {
-    //         setIsShow(true)
-    //     }
-    //
-    // }
-
-    console.log('isshow', isShow)
   return (
-    <div className="w-52 m-auto">
-      <p className="mb-20 text-3xl font-bold">Sign Up</p>
-      <SLabeledInput label="아이디" type="text" name="id" required onChange={handleChange} />
-      <br />
-      <SLabeledInput label="비밀번호" type="password" name="password" onChange={handleChange} />
-
-      <br />
-      <SLabeledInput
-        label="비밀번호 확인"
-        type="passwordCheck"
-        name="passwordCheck"
-        required
-        onKeyPress={checkPassword}
-        onChange={handleChange}
-      />
-        <p className={isShow ? 'block' : 'hidden' }>비밀번호가 일치하지 않습니다.</p>
-      <br />
-      <SLabeledInput label="이메일" type="email" name="email" required onChange={handleChange} />
-      <br />
-      <SLabeledInput label="블로그" type="url" name="blogUrl" onChange={handleChange}/>
-      <br />
-      <SLabeledInput label="깃허브" type="url"  name="githubUrl" onChange={handleChange}/>
-      <br />
-      <STextButton
-        className="block m-auto"
-        type="button"
-        value="가입하기"
-        onClick={() => alert('클릭')}
-      />
+    <div className="flex h-full">
+        <div className="w-52 m-auto">
+          <p className="mb-14 text-3xl text-center font-bold">Sign Up</p>
+          <SLabeledInput label="아이디" type="text" name="loginId" required onChange={handleChange} />
+          <br />
+          <SLabeledInput label="비밀번호" type="password" name="password" onChange={handleChange} />
+          <br />
+            <SLabeledInput label="이름" type="text" name="name" required onChange={handleChange} />
+            <br/>
+          <SLabeledInput label="이메일" type="email" name="email" required onChange={handleChange} />
+          <br />
+          <SLabeledInput label="블로그" type="url" name="blogUrl" onChange={handleChange}/>
+          <br />
+          <SLabeledInput label="깃허브" type="url"  name="githubUrl" onChange={handleChange}/>
+          <br />
+          <STextButton
+            className="block m-auto disabled:opacity-20"
+            type="button"
+            value="가입하기"
+            disabled={userForm.loginId === null || userForm.password === null || userForm.name === null || userForm.email === null}
+            onClick={handleClickSignUp}
+          />
+        </div>
     </div>
   )
 }

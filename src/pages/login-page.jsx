@@ -22,9 +22,10 @@ export default () => {
   }
 
   return (
+
     <LoginTemplate
       head={
-        <p className="mb-[120px] text-center text-3xl font-bold">
+        <p className="mb-14 text-center text-3xl font-bold">
           shall we code?
         </p>
       }
