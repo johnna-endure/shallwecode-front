@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import IndexPage from './pages/IndexPage'
 import SignInPage from './pages/SignInPage'
+import Authorized from './pages/Authorized'
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: '/signin',
     element: <SignInPage />,
+  },
+  {
+    path: '/authorized/github',
+    element: <Authorized />,
   },
 ])
 
