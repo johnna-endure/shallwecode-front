@@ -5,12 +5,12 @@ import IndexPage from './pages/IndexPage'
 import SignInPage from './pages/SignInPage'
 import Authorized from './pages/Authorized'
 import SignUpPage from './pages/SignUpPage'
-import Test from "./Test";
+import Test from './Test'
 
 const router = createBrowserRouter([
   {
     path: '/test',
-    element: <Test/>,
+    element: <Test />,
   },
   {
     path: '/signin',
