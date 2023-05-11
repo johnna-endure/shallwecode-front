@@ -1,22 +1,22 @@
-import { Label, TextInput } from 'flowbite-react'
-import { LabelProps } from '../atoms/Label'
-import { TextInputProps } from '../atoms/Input'
+export interface TextInputProps {}
+
+export interface LabelProps {}
 
 export interface TopLabelInputProps extends LabelProps, TextInputProps {}
 
 export const TopLabelInput = (props: TopLabelInputProps) => {
   return (
     <>
-      <div className="mb-2 block">
-        <Label htmlFor={props.htmlFor} value={props.labelText} />
+      <div className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text">What is your name?</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Type here"
+          className="input input-bordered w-full max-w-xs"
+        />
       </div>
-      <TextInput
-        id={props?.id}
-        name={props.name}
-        type={props?.type ?? 'text'}
-        placeholder={props?.placeholder}
-        required={props?.required ?? false}
-      />
     </>
   )
 }

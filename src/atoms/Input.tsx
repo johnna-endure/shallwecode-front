@@ -1,7 +1,7 @@
-export interface TextInputProps {
-  id?: string
-  name: string
-  type?: string
-  placeholder?: string
-  required?: boolean
+export const TextInput = () => {
+  return (
+    <>
+      <input className={''} type={'text'} />
+    </>
+  )
 }
