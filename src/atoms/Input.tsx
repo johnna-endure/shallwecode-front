@@ -1,7 +1,8 @@
 import { ChangeEventHandler, Ref } from 'react'
 
-interface InputProps {
+export interface InputProps {
   ref?: Ref<HTMLInputElement>
+  type?: string
   className?: string
   onChange?: ChangeEventHandler<HTMLInputElement>
   defaultValue?: string | number | readonly string[] | undefined
@@ -14,7 +15,7 @@ export const TextInput = (props: InputProps) => {
       <input
         ref={props?.ref}
         className={`px-2 h-8 bg-white border-2 border-blue-200 rounded focus:outline-0 focus:border-blue-600 ${props?.className}`}
-        type="text"
+        type={props?.type ?? 'text'}
         defaultValue={props?.defaultValue}
         value={props?.value}
         onChange={props?.onChange}
