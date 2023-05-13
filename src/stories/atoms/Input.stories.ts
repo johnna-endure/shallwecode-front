@@ -1,6 +1,6 @@
-import { TextInput } from '../atoms/Input'
 import { Meta, StoryObj } from '@storybook/react'
 import { ChangeEvent } from 'react'
+import { TextInput } from '../../atoms/Input'
 
 const meta = {
   title: 'Atoms/Input/TextInput',
