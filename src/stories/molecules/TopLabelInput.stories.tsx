@@ -14,5 +14,14 @@ export default meta
 export const Basic: Story = {
   args: {
     labelText: 'Label',
+    name: 'test',
+  },
+}
+
+export const ValidationFailed: Story = {
+  args: {
+    labelText: 'Label',
+    isValid: false,
+    name: 'test',
   },
 }
