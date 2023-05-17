@@ -1,14 +1,14 @@
 import { FormEventHandler, ReactNode, RefObject } from 'react'
 
 interface FormProps {
+  /**
+   * 폼 내부 컴포넌트
+   */
   children?: ReactNode
-  rules?: ValidationRule[]
+  /**
+   * submit 이벤트
+   */
   onSubmit?: FormEventHandler<HTMLFormElement>
-}
-
-interface ValidationRule {
-  rule: (ref: RefObject<HTMLInputElement>) => boolean
-  failureMessage: string
 }
 
 export const Form = (props: FormProps) => {
@@ -16,14 +16,16 @@ export const Form = (props: FormProps) => {
 }
 
 interface FormFieldProps {
+  /**
+   * input 역할의 컴포넌트
+   */
   input: ReactNode
+  /**
+   * validation 실패 메세지
+   */
   failureMessage?: string | undefined
 }
 
-/**
- * input 이 validation 실패할 경우 보여줄 에러 메세지를 포함한 컴포넌트
- * input validation border 변경의 책임은 input Element 자체에 있다.
- */
 export const FormField = (props: FormFieldProps) => {
   return (
     <>
