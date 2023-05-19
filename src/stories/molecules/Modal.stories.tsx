@@ -11,6 +11,11 @@ const meta = {
 type Story = StoryObj<typeof meta>
 
 export default meta
-export const Basic: Story = {
-  args: {},
+export const EmptyModal: Story = {
+  args: {
+    size: {
+      width: 'w-[400px]',
+      height: 'h-[250px]',
+    },
+  },
 }

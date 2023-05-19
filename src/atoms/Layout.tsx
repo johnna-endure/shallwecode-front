@@ -5,10 +5,6 @@ export interface ComponentSize {
   height: string
 }
 
-export const ScreenGrayBackground = (props: { children?: ReactNode }) => {
-  return <div className="h-screen w-screen bg-gray-400">{props?.children}</div>
-}
-
 export const FullScreenBackground = (props: {
   color?: string
   children?: ReactNode

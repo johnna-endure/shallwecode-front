@@ -1,10 +1,13 @@
-import { ScreenGrayBackground } from '../atoms/Layout'
+import {
+  CenterContentContainer,
+  ComponentSize,
+  FullScreenBackground,
+} from '../atoms/Layout'
 
-interface ModalSize {
-  width: number | string
-  height: number | string
-}
-
-export const Modal = () => {
-  return <></>
+export const Modal = (props: { size: ComponentSize }) => {
+  return (
+    <FullScreenBackground color={'bg-gray-400'}>
+      <CenterContentContainer size={props.size} />
+    </FullScreenBackground>
+  )
 }
