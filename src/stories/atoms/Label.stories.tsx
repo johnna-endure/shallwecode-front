@@ -15,6 +15,6 @@ export default meta
 export const Basic: Story = {
   args: {
     text: 'this is label : ',
-    children: <TextInput defaultValue={'hello'} />,
+    children: <TextInput name={'test'} defaultValue={'hello'} />,
   },
 }

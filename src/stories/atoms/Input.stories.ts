@@ -15,6 +15,7 @@ export default meta
 export const Basic: Story = {
   args: {
     className: 'w-[300px]',
+    name: 'test',
     defaultValue: 'hello',
     onChange: (e: ChangeEvent<HTMLInputElement>) => {
       console.log(e.target.value)
