@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { CenterContentContainer, ScreenGrayBackground } from './atoms/Layout'
+import { CenterContentPanel, FullScreenBackground } from './atoms/Layout'
 import { TextInput } from './atoms/Input'
 
 export default function () {
   return (
-    <ScreenGrayBackground>
-      <CenterContentContainer>
-        <TextInput></TextInput>
-      </CenterContentContainer>
-    </ScreenGrayBackground>
+    <FullScreenBackground color={'bg-gray-400'}>
+      <CenterContentPanel />
+    </FullScreenBackground>
   )
 }

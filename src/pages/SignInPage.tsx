@@ -1,12 +1,19 @@
 import React, { useRef } from 'react'
-import OneColumnLayoutTemplate from '../templates/SingleContentLayoutTemplate'
 import LoginForm from '../organisms/LoginForm'
-// import '../index.css'
+import {
+  CenterContentPanel,
+  ComponentSize,
+  FullScreenBackground,
+} from '../atoms/Layout'
 
 export default () => {
   return (
-    <OneColumnLayoutTemplate>
-      <LoginForm />
-    </OneColumnLayoutTemplate>
+    <FullScreenBackground>
+      <CenterContentPanel>
+        <div className="flex justify-center items-center">
+          <LoginForm />
+        </div>
+      </CenterContentPanel>
+    </FullScreenBackground>
   )
 }
