@@ -9,7 +9,6 @@ module.exports = {
   },
   darkMode: "class", // os darkmode에 영향받지 않도록 추가
   plugins: [
-    require("tailwind-scrollbar-hide"),
-    require("daisyui")
+    require("tailwind-scrollbar-hide")
   ]
 };
