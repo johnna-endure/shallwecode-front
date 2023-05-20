@@ -1,8 +1,6 @@
-import { Link, useHref, useNavigate, useNavigation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default (props: any) => {
-  // const goToPage = (url: string) => useHref(url)
-
   return (
     <div>
       인덱스 페이지

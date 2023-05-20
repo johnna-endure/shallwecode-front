@@ -17,15 +17,20 @@ export const FullScreenBackground = (props: {
   )
 }
 
-export const CenterContentContainer = (props: {
+export const CenterContentPanel = (props: {
   className?: string
   children?: ReactNode
-  size: ComponentSize
+  size?: ComponentSize
+  shadow?: boolean
 }) => {
   return (
     <div className={'flex w-full h-full justify-center items-center'}>
       <div
-        className={`p-16 ${props.size.width} ${props.size.height} min-w-min min-h-min bg-white rounded-2xl shadow ${props?.className}`}>
+        className={`p-16 ${props.size?.width} ${
+          props.size?.height
+        } min-w-min min-h-min bg-white rounded-2xl ${
+          props?.shadow ?? 'shadow'
+        } ${props?.className}`}>
         {props?.children}
       </div>
     </div>

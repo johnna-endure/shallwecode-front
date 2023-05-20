@@ -1,23 +1,23 @@
 import { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
-import { CenterContentContainer, ComponentSize } from '../../../atoms/Layout'
+import { CenterContentPanel, ComponentSize } from '../../../atoms/Layout'
 
-const DemoCenterContentContainer = (props: {
+const DemoCenterContentPanel = (props: {
   className?: string
   size: ComponentSize
 }) => {
   return (
     <div className={`w-screen h-screen bg-gray-300`}>
-      <CenterContentContainer className={props?.className} size={props.size} />
+      <CenterContentPanel className={props?.className} size={props.size} />
     </div>
   )
 }
 
 const meta = {
-  title: 'Atoms/Layout/CenterContentContainer',
-  component: DemoCenterContentContainer,
+  title: 'Atoms/Layout/CenterContentPanel',
+  component: DemoCenterContentPanel,
   tags: ['autodocs'],
-} satisfies Meta<typeof DemoCenterContentContainer>
+} satisfies Meta<typeof DemoCenterContentPanel>
 
 type Story = StoryObj<typeof meta>
 
