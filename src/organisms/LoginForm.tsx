@@ -1,22 +1,24 @@
-import { FormEvent, MouseEventHandler } from 'react'
-import { Link } from 'react-router-dom'
+import { FormEvent, MouseEventHandler } from "react";
+import { Link } from "react-router-dom";
 
-const PASSWORD_LOGIN_URL = 'http://localhost:8080/login/password'
+// TODO form 필드 수정 필요
+const PASSWORD_LOGIN_URL = "http://localhost:8080/login/password";
 export default function LoginForm() {
   const githubLogin = async () => {
-    window.location.href = 'http://localhost:8080/login/github'
-  }
+    window.location.href = "http://localhost:8080/login/github";
+  };
 
-  const handleSubmit = (e: FormEvent) => {}
+  const handleSubmit = (e: FormEvent) => {
+  };
 
   return (
     <div className="w-[1000px] h-[700px]">
-      {/*쉘위코드 이미지 영역*/}
+      {/*로그인 배너 영역*/}
       <div className={`mt-[100px] bg-indigo-500 flex justify-center`}>
         <p className="text-2xl">Shall we code?</p>
       </div>
 
-      {/*패스워드 로그인 영역*/}
+      {/*form 영역*/}
       <div className="flex justify-center">
         <form
           method="post"
@@ -43,10 +45,12 @@ export default function LoginForm() {
         </button>
       </div>
 
-      {/*회원가입 링크 버튼 영역*/}
+      {/*부가기능 영역*/}
       <div className="flex justify-center">
-        <Link to="/signup">아이디가 없으신가요? 여기서 회원가입</Link>
+        <p onClick={() => alert("hello")}>회원가입</p> |
+        <Link>아이디 찾기</Link> |
+        <Link>비밀번호 찾기</Link>
       </div>
     </div>
-  )
+  );
 }
