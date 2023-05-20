@@ -1,15 +1,18 @@
-import { FormEvent, MouseEventHandler } from "react";
-import { Link } from "react-router-dom";
+import { FormEvent, useState } from 'react'
+import SelectSignupTypeModal from './SelectSignupTypeModal'
 
 // TODO form 필드 수정 필요
-const PASSWORD_LOGIN_URL = "http://localhost:8080/login/password";
+const PASSWORD_LOGIN_URL = 'http://localhost:8080/login/password'
 export default function LoginForm() {
+  const [openSignupModal, setOpenSignupModal] = useState(false)
+
   const githubLogin = async () => {
-    window.location.href = "http://localhost:8080/login/github";
-  };
+    window.location.href = 'http://localhost:8080/login/github'
+  }
 
   const handleSubmit = (e: FormEvent) => {
-  };
+    e.preventDefault()
+  }
 
   return (
     <div className="w-[1000px] h-[700px]">
@@ -47,10 +50,16 @@ export default function LoginForm() {
 
       {/*부가기능 영역*/}
       <div className="flex justify-center">
-        <p onClick={() => alert("hello")}>회원가입</p> |
-        <Link>아이디 찾기</Link> |
-        <Link>비밀번호 찾기</Link>
+        <p onClick={() => setOpenSignupModal(true)}>회원가입</p> |
+        <p>아이디 찾기</p> |<p>비밀번호 찾기</p>
       </div>
+
+      <SelectSignupTypeModal
+        open={openSignupModal}
+        onCancel={() => {
+          setOpenSignupModal(false)
+        }}
+      />
     </div>
-  );
+  )
 }

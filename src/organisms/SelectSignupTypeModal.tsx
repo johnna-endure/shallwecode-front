@@ -1,19 +1,20 @@
 import React from 'react'
 import { Modal } from '../molecules/Modal'
 import { ComponentSize } from '../atoms/Layout'
-import { useNavigate } from 'react-router-dom'
 
 const size: ComponentSize = {
   width: 'w-[400px]',
   height: 'h-[300px]',
 }
 
-export default (props: { open: boolean }) => {
-  const navigator = useNavigate()
-
+export default (props: { open: boolean; onCancel: () => void }) => {
   return (
     <>
-      <Modal open={props.open} title="회원가입" size={size}>
+      <Modal
+        open={props.open}
+        title="회원가입"
+        size={size}
+        onCancel={props.onCancel}>
         <div className={'h-full grid grid-cols-2'}>
           <div
             className="flex justify-center items-center h-full min-h-[100px] border-2"
