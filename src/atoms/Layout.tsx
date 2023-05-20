@@ -29,7 +29,7 @@ export const CenterContentPanel = (props: {
         className={`p-16 ${props.size?.width} ${
           props.size?.height
         } min-w-min min-h-min bg-white rounded-2xl ${
-          props?.shadow ?? 'shadow'
+          props?.shadow ? 'shadow' : ''
         } ${props?.className}`}>
         {props?.children}
       </div>
