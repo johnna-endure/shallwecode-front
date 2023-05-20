@@ -1,27 +1,34 @@
-import React from "react";
-import { Modal } from "../molecules/Modal";
-import { ComponentSize } from "../atoms/Layout";
+import React from 'react'
+import { Modal } from '../molecules/Modal'
+import { ComponentSize } from '../atoms/Layout'
+import { useNavigate } from 'react-router-dom'
 
 const size: ComponentSize = {
-  width: "w-2/5",
-  height: "h-2/5"
-};
+  width: 'w-[400px]',
+  height: 'h-[300px]',
+}
 
-export default () => {
-  return <>
-    <Modal title="회원가입" size={size}>
-      <div className={"h-full grid grid-cols-2"}>
-        <div className="flex justify-center items-center h-full border-2" onClick={() => {
-        }}>
-          <p className={"text-xl"}>패스워드</p>
+export default (props: { open: boolean }) => {
+  const navigator = useNavigate()
+
+  return (
+    <>
+      <Modal open={props.open} title="회원가입" size={size}>
+        <div className={'h-full grid grid-cols-2'}>
+          <div
+            className="flex justify-center items-center h-full min-h-[100px] border-2"
+            onClick={() => alert('패스워드')}>
+            <p className={'text-xl'}>패스워드</p>
+          </div>
+          <div
+            className="flex justify-center items-center h-full border-2"
+            onClick={() => alert('깃허브')}>
+            <p className={'text-xl'}>깃허브</p>
+          </div>
         </div>
-        <div className="flex justify-center items-center h-full border-2" onClick={() => {
-        }}>
-          <p className={"text-xl"}>깃허브</p>
-        </div>
-      </div>
-    </Modal>
-  </>;
+      </Modal>
+    </>
+  )
 }
 
 /*
