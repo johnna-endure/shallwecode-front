@@ -1,5 +1,7 @@
 import { FormEvent, useState } from 'react'
 import SelectSignupTypeModal from './SelectSignupTypeModal'
+import { TextInput } from '../atoms/Input'
+import { Label } from '../atoms/Label'
 
 // TODO form 필드 수정 필요
 const PASSWORD_LOGIN_URL = 'http://localhost:8080/login/password'
@@ -7,7 +9,8 @@ export default function LoginForm() {
   const [openSignupModal, setOpenSignupModal] = useState(false)
 
   const githubLogin = async () => {
-    window.location.href = 'http://localhost:8080/login/github'
+    // window.location.href = 'http://localhost:8080/login/github'
+    alert('깃허브 로그인')
   }
 
   const handleSubmit = (e: FormEvent) => {
@@ -27,16 +30,18 @@ export default function LoginForm() {
           method="post"
           action={PASSWORD_LOGIN_URL}
           onSubmit={(e: FormEvent) => handleSubmit(e)}>
-          <div>
-            <label>아이디 :</label>
-            <input className="border-2" type="text" />
+          <div className={'my-2 flex justify-between'}>
+            <Label text="아이디" />
+            <TextInput name={'loginId'} />
           </div>
-          <div>
-            <label>패스워드 :</label>
-            <input className="border-2" type="password" />
+          <div className={'my-2 flex justify-between'}>
+            <Label className={'w-20'} text="비밀번호" />
+            <TextInput name={'password'} type={'password'} />
           </div>
           <div className="flex justify-center">
-            <button className="border-2 w-16">로그인</button>
+            <button className="border-2 w-16" onClick={() => alert('로그인')}>
+              로그인
+            </button>
           </div>
         </form>
       </div>
