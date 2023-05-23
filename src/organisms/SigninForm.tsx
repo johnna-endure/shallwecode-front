@@ -18,45 +18,38 @@ export default function SigninForm() {
   }
 
   return (
-    <div className="w-[1000px] h-[700px]">
+    <div className="flex flex-col items-center p-6">
       {/*로그인 배너 영역*/}
-      <div className={`mt-[100px] bg-indigo-500 flex justify-center`}>
-        <p className="text-2xl">Shall we code?</p>
-      </div>
+        <p className="mb-12 text-3xl">Shall we code?</p>
 
       {/*form 영역*/}
-      <div className="flex justify-center">
+
         <form
+          className='flex flex-col items-center'
           method="post"
           action={PASSWORD_LOGIN_URL}
           onSubmit={(e: FormEvent) => handleSubmit(e)}>
-          <div className={'my-2 flex justify-between'}>
-            <Label text="아이디" />
-            <TextInput name={'loginId'} />
-          </div>
-          <div className={'my-2 flex justify-between'}>
-            <Label className={'w-20'} text="비밀번호" />
-            <TextInput name={'password'} type={'password'} />
-          </div>
-          <div className="flex justify-center">
-            <button className="border-2 w-16" onClick={() => alert('로그인')}>
+            <TextInput className="mb-3 w-[340px]" name='loginId' placeholder='아이디를 입력해주세요' />
+        
+            <TextInput className="w-[340px]" name={'password'} type='password' placeholder='비밀번호를 입력해주세요' />
+  
+
+            <button className="rounded mt-10 p-3 w-[340px] text-white bg-[#F34949]" onClick={() => alert('로그인')}>
               로그인
             </button>
-          </div>
+      
         </form>
-      </div>
+     
 
       {/*소셜 로그인 버튼 영역*/}
-      <div className="mt-[20px] flex justify-center items-center">
-        <button className="block border-2" onClick={githubLogin}>
+        <button className="rounded border border-[#F34949] my-3 p-3 w-[340px]" type="button" onClick={githubLogin}>
           Github로 로그인하기
         </button>
-      </div>
 
       {/*부가기능 영역*/}
-      <div className="flex justify-center">
-        <p onClick={() => setOpenSignupModal(true)}>회원가입</p> |
-        <p>아이디 찾기</p> |<p>비밀번호 찾기</p>
+      <div className="flex justify-between gap-2">
+        <button type="button" onClick={() => setOpenSignupModal(true)}>회원가입</button> |
+        <button type="button">아이디 찾기</button> | <button type="button">비밀번호 찾기</button>
       </div>
 
       <SelectSignupTypeModal
