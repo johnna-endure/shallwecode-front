@@ -23,21 +23,17 @@ export default function SigninForm() {
         <p className="mb-12 text-3xl">Shall we code?</p>
 
       {/*form 영역*/}
-
         <form
           className='flex flex-col items-center'
           method="post"
           action={PASSWORD_LOGIN_URL}
           onSubmit={(e: FormEvent) => handleSubmit(e)}>
             <TextInput className="mb-3 w-[340px]" name='loginId' placeholder='아이디를 입력해주세요' />
-        
             <TextInput className="w-[340px]" name={'password'} type='password' placeholder='비밀번호를 입력해주세요' />
   
-
             <button className="rounded mt-10 p-3 w-[340px] text-white bg-[#F34949]" onClick={() => alert('로그인')}>
               로그인
             </button>
-      
         </form>
      
 
