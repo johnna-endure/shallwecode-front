@@ -1,10 +1,6 @@
 import React, { useRef } from 'react'
 import LoginForm from '../organisms/LoginForm'
-import {
-  CenterContentPanel,
-  ComponentSize,
-  FullScreenBackground,
-} from '../atoms/Layout'
+import { CenterContentPanel, FullScreenBackground } from '../atoms/Layout'
 
 export default () => {
   return (

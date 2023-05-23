@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Form, FormField } from '../../molecules/Form'
+import { FormField } from '../../molecules/Form'
 import { TopLabelTextInput } from '../../molecules/TopLabelTextInput'
 import { useRef } from 'react'
 import { useValidation } from '../../hooks/useValidation'
@@ -15,7 +15,7 @@ const DemoForm = () => {
   const nameRef = useRef<HTMLInputElement>(null)
 
   return (
-    <Form
+    <form
       onSubmit={(e) => {
         e.preventDefault()
         emailValidator()
@@ -55,7 +55,7 @@ const DemoForm = () => {
         }>
         제출
       </button>
-    </Form>
+    </form>
   )
 }
 

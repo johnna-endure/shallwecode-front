@@ -1,19 +1,4 @@
-import { FormEventHandler, ReactNode, RefObject } from 'react'
-
-interface FormProps {
-  /**
-   * 폼 내부 컴포넌트
-   */
-  children?: ReactNode
-  /**
-   * submit 이벤트
-   */
-  onSubmit?: FormEventHandler<HTMLFormElement>
-}
-
-export const Form = (props: FormProps) => {
-  return <form onSubmit={props.onSubmit}>{props?.children}</form>
-}
+import { ReactNode } from 'react'
 
 interface FormFieldProps {
   /**
