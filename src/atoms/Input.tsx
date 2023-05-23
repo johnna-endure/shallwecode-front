@@ -8,18 +8,20 @@ export interface InputProps {
   onChange?: ChangeEventHandler<HTMLInputElement>
   defaultValue?: string | number | readonly string[] | undefined
   value?: string | number | readonly string[] | undefined
+  placeholder?: string
 }
 
 export const TextInput = (props: InputProps) => (
   <>
     <input
       ref={props?.inputRef}
-      className={`px-2 h-8 bg-white border-2 border-blue-200 rounded focus:outline-0 focus:border-blue-600 ${props?.className}`}
+      className={`rounded border border-[#D9D9D9] p-3 focus:outline-0 focus:border-[#F34949] ${props?.className}`}
       type={props?.type ?? 'text'}
       name={props.name}
       defaultValue={props?.defaultValue}
       value={props?.value}
       onChange={props?.onChange}
+      placeholder={props?.placeholder}
     />
   </>
 )
