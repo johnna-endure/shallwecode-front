@@ -2,7 +2,7 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import IndexPage from './pages/IndexPage'
-import SignInPage from './pages/SignInPage'
+import SigninPage from './pages/SigninPage'
 import Authorized from './pages/Authorized'
 import Test from './Test'
 
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/signin',
-    element: <SignInPage />,
+    element: <SigninPage />,
   },
   // {
   //   path: '/signup',
