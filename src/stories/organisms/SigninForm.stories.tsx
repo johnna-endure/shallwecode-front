@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Form, FormField } from '../../molecules/Form'
+import { FormField } from '../../molecules/Form'
 import { TopLabelTextInput } from '../../molecules/TopLabelTextInput'
 import { useRef } from 'react'
 import { useValidation } from '../../hooks/useValidation'
-import LoginForm from '../../organisms/LoginForm'
+import SigninForm from '../../organisms/SigninForm'
 
 const DemoForm = () => {
   const [emailRef, emailValidResult, emailValidator] = useValidation([
@@ -16,7 +16,7 @@ const DemoForm = () => {
   const nameRef = useRef<HTMLInputElement>(null)
 
   return (
-    <Form
+    <form
       onSubmit={(e) => {
         e.preventDefault()
         emailValidator()
@@ -56,16 +56,16 @@ const DemoForm = () => {
         }>
         제출
       </button>
-    </Form>
+    </form>
   )
 }
 
 const meta = {
-  title: 'Organisms/LoginForm',
-  component: LoginForm,
+  title: 'Organisms/SigninForm',
+  component: SigninForm,
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof LoginForm>
+} satisfies Meta<typeof SigninForm>
 
 type Story = StoryObj<typeof meta>
 

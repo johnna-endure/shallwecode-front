@@ -5,7 +5,7 @@ import { Label } from '../atoms/Label'
 
 // TODO form 필드 수정 필요
 const PASSWORD_LOGIN_URL = 'http://localhost:8080/login/password'
-export default function LoginForm() {
+export default function SigninForm() {
   const [openSignupModal, setOpenSignupModal] = useState(false)
 
   const githubLogin = async () => {
