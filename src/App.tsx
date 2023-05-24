@@ -5,28 +5,33 @@ import IndexPage from './pages/IndexPage'
 import SigninPage from './pages/SigninPage'
 import Authorized from './pages/Authorized'
 import Test from './Test'
+import SignupPage from './pages/SignupPage'
+import ErrorPage from './pages/ErrorPage'
 
 const router = createBrowserRouter([
   {
     path: '/test',
     element: <Test />,
   },
-  {
-    path: '/signin',
-    element: <SigninPage />,
-  },
-  // {
-  //   path: '/signup',
-  //   element: <SignUpPage />,
-  // },
-  {
-    path: '/authorized/github',
-    element: <Authorized />,
-  },
 
   {
     path: '/',
     element: <IndexPage />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: 'signin',
+        element: <SigninPage />,
+      },
+      {
+        path: 'signup',
+        element: <SignupPage />,
+      },
+      {
+        path: 'authorized/github',
+        element: <Authorized />,
+      },
+    ],
   },
 ])
 
