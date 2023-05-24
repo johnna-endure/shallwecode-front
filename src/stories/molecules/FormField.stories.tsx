@@ -3,7 +3,7 @@ import { FormField } from '../../molecules/Form'
 import { TopLabelTextInput } from '../../molecules/TopLabelTextInput'
 
 const meta = {
-  title: 'Molecules/Form/FormInput',
+  title: 'Molecules/Form/FormField',
   component: FormField,
   tags: ['autodocs'],
   argTypes: {},

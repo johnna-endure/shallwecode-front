@@ -9,6 +9,7 @@ export interface InputProps {
   defaultValue?: string | number | readonly string[] | undefined
   value?: string | number | readonly string[] | undefined
   placeholder?: string
+  required?: boolean
 }
 
 export const TextInput = (props: InputProps) => (
@@ -22,6 +23,7 @@ export const TextInput = (props: InputProps) => (
       value={props?.value}
       onChange={props?.onChange}
       placeholder={props?.placeholder}
+      required={props?.required}
     />
   </>
 )

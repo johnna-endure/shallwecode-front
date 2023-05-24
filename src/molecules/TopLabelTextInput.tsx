@@ -6,6 +6,7 @@ interface TopLabelTextInputProps extends InputProps {
   inputRef?: RefObject<HTMLInputElement> | undefined
   labelText: string
   isValid?: boolean
+  required?: boolean
 }
 
 export const TopLabelTextInput = (props: TopLabelTextInputProps) => {
@@ -13,12 +14,14 @@ export const TopLabelTextInput = (props: TopLabelTextInputProps) => {
   const className = `${props?.className} ${
     isValid ? '' : 'border-rose-200 focus:outline-0 focus:border-rose-600'
   }`
+  const defaultRequired = props?.required ?? false
   return (
     <>
       <div>
         <Label
           className={'pl-1 pb-1 text-xs font-bold block'}
           text={props.labelText}
+          required={defaultRequired}
         />
         <TextInput {...props} className={className} />
       </div>
