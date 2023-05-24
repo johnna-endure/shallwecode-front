@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 export default (props: any) => {
   return (
@@ -6,6 +6,7 @@ export default (props: any) => {
       인덱스 페이지
       <div>
         <Link to="/signin">로그인 페이지</Link>
+        <Outlet></Outlet>
       </div>
     </div>
   )
