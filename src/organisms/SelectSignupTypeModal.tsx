@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Modal } from '../molecules/Modal'
 import { ComponentSize } from '../atoms/Layout'
 
@@ -8,6 +9,7 @@ const size: ComponentSize = {
 }
 
 export default (props: { open: boolean; onCancel: () => void }) => {
+  const navigator = useNavigate()
   return (
     <>
       <Modal
@@ -18,12 +20,12 @@ export default (props: { open: boolean; onCancel: () => void }) => {
         <div className={'h-full grid grid-cols-2'}>
           <div
             className="flex justify-center items-center h-full min-h-[100px] border-2"
-            onClick={() => alert('패스워드')}>
+            onClick={() => navigator('/signup/password')}>
             <p className={'text-xl'}>패스워드</p>
           </div>
           <div
             className="flex justify-center items-center h-full border-2"
-            onClick={() => alert('깃허브')}>
+            onClick={() => navigator('/signup/github')}>
             <p className={'text-xl'}>깃허브</p>
           </div>
         </div>

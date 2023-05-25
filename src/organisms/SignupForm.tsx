@@ -4,7 +4,7 @@ import { TopLabelTextInput } from '../molecules/TopLabelTextInput'
 
 interface SignupFormProps {
   onClick?: MouseEventHandler<HTMLButtonElement>
-  type: 'password' | 'github'
+  type: string
 }
 
 /*
