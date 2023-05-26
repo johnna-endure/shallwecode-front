@@ -33,15 +33,3 @@ export default (props: { open: boolean; onCancel: () => void }) => {
     </>
   )
 }
-
-/*
- <div>
-        <p className="text-xl" onClick={openPasswordSignupModal}>
-          패스워드로 회원가입
-        </p>
-        <br />
-        <p className="text-xl" onClick={openGithubSignupModal}>
-          깃허브로 회원가입
-        </p>
-      </div>
- */
