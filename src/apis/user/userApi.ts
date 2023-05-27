@@ -7,7 +7,7 @@ export const userApi = {
   signup: async (data: UserSaveRequest, type: SignupType) => {
     try {
       const response = await apiClient<UserSaveRequest>(
-        `/signup?type=${type}`,
+        `/signup?type=${type.toUpperCase()}`,
         'post',
         data
       )

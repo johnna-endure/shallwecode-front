@@ -1,34 +1,21 @@
 import React, { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useValidation, ValidationPredicate } from '../hooks/useValidation'
 
 import { userApi } from '../apis/user/userApi'
 
 import { FormField } from '../molecules/Form'
 import { TopLabelTextInput } from '../molecules/TopLabelTextInput'
-
-interface SignupFormProps {
-  type: 'password' | 'github'
-}
+import { authenticationApi } from '../apis/authentication/authenticationApi'
 
 export type SignupType = 'password' | 'github'
+
+interface SignupFormProps {
+  type: SignupType
+}
 
 /*
 email, name, blogUrl, githubUrl
  */
-const loginIdPredicates: ValidationPredicate[] = [
-  {
-    rule: (loginId) => {
-      // if (loginId) {
-      //   return loginId.length > 6
-      // } else {
-      //   return false
-      // }
-      return false
-    },
-    failureMessage: '아이디가 이미 존재합니다',
-  },
-]
 export default (props: SignupFormProps) => {
   const navigator = useNavigate()
 
@@ -77,16 +64,13 @@ export default (props: SignupFormProps) => {
 }
 
 const IdPasswordFormField = () => {
-  const [loginIdRef, loginIdResult, loginIdValidator] =
-    useValidation(loginIdPredicates)
-
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null)
+  const [loginIdFailureMessage, setLoginIdFailureMessage] = useState<string>()
   return (
     <>
-      <FormField failureMessage={loginIdResult.message}>
+      <FormField failureMessage={loginIdFailureMessage}>
         <div className={'flex'}>
           <TopLabelTextInput
-            inputRef={loginIdRef}
             labelText={'아이디'}
             name={'loginId'}
             required
@@ -94,7 +78,19 @@ const IdPasswordFormField = () => {
               if (timeoutId) {
                 clearTimeout(timeoutId)
               }
-              setTimeoutId(setTimeout(() => loginIdValidator(), 100))
+              setTimeoutId(
+                setTimeout(async () => {
+                  const isValid = await authenticationApi.checkLoginId(
+                    e.target.value
+                  )
+
+                  if (!isValid) {
+                    setLoginIdFailureMessage('이미 존재하는 아이디입니다')
+                  } else {
+                    setLoginIdFailureMessage('')
+                  }
+                }, 100)
+              )
             }}
           />
         </div>

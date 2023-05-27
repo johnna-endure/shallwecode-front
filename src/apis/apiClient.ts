@@ -20,37 +20,37 @@ export const apiClient = async <D, R = any>(
 
   switch (method) {
     case 'get':
-      return axios.get<R, AxiosResponse<R, D>, D>(
-        `${BACKEND_URL}/${url}`,
+      return await axios.get<R, AxiosResponse<R, D>, D>(
+        `${BACKEND_URL}${url}`,
         configAddedDefault
       )
     case 'post':
-      return axios.post<R, AxiosResponse<R, D>, D>(
-        url,
+      return await axios.post<R, AxiosResponse<R, D>, D>(
+        `${BACKEND_URL}${url}`,
         data,
         configAddedDefault
       )
     case 'put':
-      return axios.put<R, AxiosResponse<R, D>, D>(
-        `${BACKEND_URL}/${url}`,
+      return await axios.put<R, AxiosResponse<R, D>, D>(
+        `${BACKEND_URL}${url}`,
         data,
         configAddedDefault
       )
     case 'delete':
-      return axios.delete<R, AxiosResponse<R, D>, D>(
-        `${BACKEND_URL}/${url}`,
+      return await axios.delete<R, AxiosResponse<R, D>, D>(
+        `${BACKEND_URL}${url}`,
         configAddedDefault
       )
     case 'patch':
-      return axios.patch<R, AxiosResponse<R, D>, D>(
-        `${BACKEND_URL}/${url}`,
+      return await axios.patch<R, AxiosResponse<R, D>, D>(
+        `${BACKEND_URL}${url}`,
         data,
         configAddedDefault
       )
   }
 }
 
-// error 인터셉터 추가
+// interceptor 추가
 axios.interceptors.response.use(
   (res) => res,
   (error) => {
