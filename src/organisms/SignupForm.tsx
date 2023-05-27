@@ -36,29 +36,32 @@ export default (props: SignupFormProps) => {
   }
   return (
     <>
-      <div className={'flex justify-center'}>
-        <form onSubmit={handleSubmit}>
-          <p className={'text-2xl'}>회원가입</p>
-          <div className={'mt-4'}>
+        <p className="mb-14 text-center text-3xl font-bold">회원가입</p>
+        <div className='w-[450px] m-auto'>
+        <p className='text-xs text-right'><span className='text-red-500'>*</span>는 필수 입력사항입니다</p>
+
+        <form className='flex flex-col items-center' onSubmit={handleSubmit}>
+          <div className='flex flex-col items-center gap-2'>
             {props.type === 'password' && <IdPasswordFormField />}
             <FormField>
-              <TopLabelTextInput labelText={'이메일'} name={'email'} required />
+              <TopLabelTextInput className="w-[340px] m-auto" labelText={'이메일'} name={'email'} required />
             </FormField>
             <FormField>
-              <TopLabelTextInput labelText={'이름'} name={'name'} required />
+              <TopLabelTextInput className="w-[340px]" labelText={'이름'} name={'name'} required />
             </FormField>
             <FormField>
-              <TopLabelTextInput labelText={'블로그'} name={'blogUrl'} />
+              <TopLabelTextInput className="w-[340px]" labelText={'블로그'} name={'blogUrl'} />
             </FormField>
             <FormField>
-              <TopLabelTextInput labelText={'깃허브'} name={'githubUrl'} />
+              <TopLabelTextInput className="w-[340px]" labelText={'깃허브'} name={'githubUrl'} />
             </FormField>
           </div>
-          <div className={'flex justify-end'}>
-            <button className={'p-2 rounded bg-gray-400'}>가입</button>
-          </div>
+            <button
+              className="rounded mt-10 p-3 w-[340px] text-white bg-[#00c473]">
+              가입하기
+            </button>
         </form>
-      </div>
+        </div>
     </>
   )
 }
@@ -69,8 +72,8 @@ const IdPasswordFormField = () => {
   return (
     <>
       <FormField failureMessage={loginIdFailureMessage}>
-        <div className={'flex'}>
           <TopLabelTextInput
+            className="w-[340px]"
             labelText={'아이디'}
             name={'loginId'}
             required
@@ -93,10 +96,9 @@ const IdPasswordFormField = () => {
               )
             }}
           />
-        </div>
       </FormField>
       <FormField>
-        <TopLabelTextInput labelText={'비밀번호'} name={'password'} required />
+        <TopLabelTextInput className="w-[340px]" labelText={'비밀번호'} name={'password'} required />
       </FormField>
     </>
   )

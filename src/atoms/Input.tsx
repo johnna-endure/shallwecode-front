@@ -16,7 +16,7 @@ export const TextInput = (props: InputProps) => (
   <>
     <input
       ref={props?.inputRef}
-      className={`rounded border border-[#D9D9D9] p-3 focus:outline-0 focus:border-[#F34949] ${props?.className}`}
+      className={`rounded border border-[#D9D9D9] p-3 focus:outline-0 focus:border-[#00c473] ${props?.className}`}
       type={props?.type ?? 'text'}
       name={props.name}
       defaultValue={props?.defaultValue}

@@ -39,7 +39,7 @@ export default function SigninForm() {
         />
 
         <button
-          className="rounded mt-10 p-3 w-[340px] text-white bg-[#F34949]"
+          className="rounded mt-10 p-3 w-[340px] text-white bg-[#00c473]"
           onClick={() => alert('로그인')}>
           로그인
         </button>
@@ -47,7 +47,7 @@ export default function SigninForm() {
 
       {/*소셜 로그인 버튼 영역*/}
       <button
-        className="rounded border border-[#F34949] my-3 p-3 w-[340px]"
+        className="rounded border border-[#00c473] my-3 p-3 w-[340px]"
         type="button"
         onClick={githubLogin}>
         Github로 로그인하기

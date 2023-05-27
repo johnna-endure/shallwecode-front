@@ -14,9 +14,7 @@ export default () => {
   return (
     <FullScreenBackground>
       <CenterContentPanel>
-        <div className="flex justify-center items-center">
           <SignupForm type={signupType} />
-        </div>
       </CenterContentPanel>
     </FullScreenBackground>
   )
