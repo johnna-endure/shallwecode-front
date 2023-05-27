@@ -14,13 +14,13 @@ type Story = StoryObj<typeof meta>
 export default meta
 export const Basic: Story = {
   args: {
-    input: <TopLabelTextInput name={'password'} labelText={'password'} />,
+    children: <TopLabelTextInput name={'password'} labelText={'password'} />,
   },
 }
 
 export const ValidationFailed: Story = {
   args: {
-    input: (
+    children: (
       <TopLabelTextInput
         name={'password'}
         labelText={'password'}

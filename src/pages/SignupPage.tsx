@@ -1,20 +1,28 @@
 import { CenterContentPanel, FullScreenBackground } from '../atoms/Layout'
 import React from 'react'
-import SignupForm from '../organisms/SignupForm'
+import SignupForm, { SignupType } from '../organisms/SignupForm'
 import { useParams } from 'react-router-dom'
 
 export default () => {
   const params = useParams()
   const signupType = params?.type
   if (!signupType) throw new Error('signType is required')
+  if (!isSignupType(signupType)) {
+    throw new Error('invalid signup type')
+  }
 
   return (
     <FullScreenBackground>
       <CenterContentPanel>
         <div className="flex justify-center items-center">
-          <SignupForm type={signupType} onClick={() => alert('가입')} />
+          <SignupForm type={signupType} />
         </div>
       </CenterContentPanel>
     </FullScreenBackground>
   )
+}
+
+function isSignupType(type: string): type is SignupType {
+  if (type == 'password' || type == 'github') return true
+  else return false
 }

@@ -56,7 +56,7 @@ export default function SigninForm() {
       {/*부가기능 영역*/}
       <div className="flex justify-between gap-2">
         <button type="button" onClick={() => setOpenSignupModal(true)}>
-          회원가입리
+          회원가입
         </button>
         {/*TODO 임시 주석처리*/}
         {/*|<button type="button">아이디 찾기</button>|*/}

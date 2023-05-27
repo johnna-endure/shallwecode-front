@@ -7,7 +7,7 @@ interface ValidationResult {
   message: string
 }
 
-interface ValidationPredicate {
+export interface ValidationPredicate {
   rule: (value: InputValue) => boolean
   failureMessage: string
 }

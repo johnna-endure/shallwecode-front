@@ -1,18 +1,19 @@
-import { UserRegisterResponse } from './userResponse'
-import axios from 'axios'
+import { UserSaveRequest } from './userRequest'
+import { SignupType } from '../../organisms/SignupForm'
+import { apiClient } from '../apiClient'
 
 const BACKEND_URL = 'http://localhost:8080'
 export const userApi = {
-  postPasswordSignup: async (data: string, type: 'password' | 'github') => {
-    const res = await axios.post<UserRegisterResponse>(
-      `${BACKEND_URL}/signup?type=password`,
-      data,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    )
-    return res.status === 200
+  signup: async (data: UserSaveRequest, type: SignupType) => {
+    try {
+      const response = await apiClient<UserSaveRequest>(
+        `/signup?type=${type}`,
+        'post',
+        data
+      )
+      return response.status === 200
+    } catch (err) {
+      return false
+    }
   },
 }
