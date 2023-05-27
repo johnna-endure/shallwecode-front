@@ -2,9 +2,9 @@ import { ReactNode } from 'react'
 
 interface FormFieldProps {
   /**
-   * input 역할의 컴포넌트
+   * children 역할의 컴포넌트
    */
-  input: ReactNode
+  children: ReactNode
   /**
    * validation 실패 메세지
    */
@@ -14,7 +14,7 @@ interface FormFieldProps {
 export const FormField = (props: FormFieldProps) => {
   return (
     <>
-      {props.input}
+      {props?.children}
       <p className="pl-1 pt-1 text-xs text-red-400 block">
         {props?.failureMessage}
       </p>
