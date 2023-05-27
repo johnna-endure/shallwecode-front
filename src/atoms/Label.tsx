@@ -11,7 +11,7 @@ export const Label = (props: LabelProps) => {
   const defaultRequired = props?.required ?? false
   return (
     <>
-      <label className={`text-xl ${props?.className}`}>
+      <label className={`text-sm ${props?.className}`}>
         {defaultRequired && <span className="text-red-500 mr-1">*</span>}
         {props.text}
         {props?.children}

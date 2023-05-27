@@ -20,7 +20,7 @@ export const TopLabelTextInput = (props: TopLabelTextInputProps) => {
     <>
       <div>
         <Label
-          className={'pl-1 pb-1 text-sm font-bold block'}
+          className={'pl-1 pb-1 font-bold block'}
           text={props.labelText}
           required={defaultRequired}
         />
