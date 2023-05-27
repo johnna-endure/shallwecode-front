@@ -7,6 +7,7 @@ interface TopLabelTextInputProps extends InputProps {
   labelText: string
   isValid?: boolean
   required?: boolean
+  className?: string
 }
 
 export const TopLabelTextInput = (props: TopLabelTextInputProps) => {
