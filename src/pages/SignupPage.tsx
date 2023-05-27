@@ -11,9 +11,7 @@ export default () => {
   return (
     <FullScreenBackground>
       <CenterContentPanel>
-        <div className="flex justify-center items-center">
           <SignupForm type={signupType} onClick={() => alert('가입')} />
-        </div>
       </CenterContentPanel>
     </FullScreenBackground>
   )

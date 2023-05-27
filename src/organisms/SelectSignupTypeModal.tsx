@@ -21,17 +21,17 @@ export default (props: { open: boolean; onCancel: () => void }) => {
         onCancel={props.onCancel}>
         <div className='flex items-center gap-3 h-full'>
           <div
-            className="flex flex-col items-center justify-center gap-4 p-6 rounded  w-1/2 h-3/4 bg-[#f9f9f9] cursor-pointer hover:-translate-y-4 hover:transition-all hover:shadow-2xl"
+            className="flex flex-col items-center justify-center gap-4 p-6 rounded  w-1/2 h-3/4 bg-[#f9f9f9] cursor-pointer hover:-translate-y-1 hover:transition-all hover:shadow-2xl"
             onClick={() => navigator('/signup/password')}>
               <IconSmile className='w-16 h-16'/>
-            <p className={'text-xl'}>직접 가입하기</p>
+            <p className='text-xl'>직접 가입하기</p>
           </div>
 
           <div
-            className="flex flex-col items-center justify-center gap-4 p-6 rounded  w-1/2 h-3/4 bg-[#f9f9f9]  cursor-pointer hover:-translate-y-4 hover:transition-all hover:shadow-2xl"
+            className="flex flex-col items-center justify-center gap-4 p-6 rounded  w-1/2 h-3/4 bg-[#f9f9f9]  cursor-pointer hover:-translate-y-1 hover:transition-all hover:shadow-2xl"
             onClick={() => navigator('/signup/github')}>
               <LogoGithub className='w-16 h-16'/>
-            <p className={'text-xl'}>깃허브로 가입하기</p>
+            <p className='text-xl'>깃허브로 가입하기</p>
           </div>
         </div>
       </Modal>
