@@ -12,8 +12,11 @@ export default function SigninForm() {
   const [openSignupModal, setOpenSignupModal] = useState(false)
 
   const githubLogin = async () => {
-    // window.location.href = 'http://localhost:8080/login/github'
-    alert('깃허브 로그인')
+    // window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}`
+    // window.location.href = 'http://localhost:8080/authorized/github'
+    // const res = await fetch('http://localhost:8080/authorized/github')
+    window.location.href = 'http://localhost:8080/login/github'
+    // console.log('githubLogin res : ', res)
   }
 
   const handleSubmitPasswordSignin = async (e: FormEvent<HTMLFormElement>) => {
