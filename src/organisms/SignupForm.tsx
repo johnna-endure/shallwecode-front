@@ -13,9 +13,6 @@ interface SignupFormProps {
   type: SignupType
 }
 
-/*
-email, name, blogUrl, githubUrl
- */
 export default (props: SignupFormProps) => {
   const navigator = useNavigate()
 
@@ -96,6 +93,7 @@ const IdPasswordFormField = () => {
           labelText={'아이디'}
           name={'loginId'}
           required
+          isValid={!Boolean(loginIdFailureMessage)}
           onChange={(e) => {
             if (timeoutId) {
               clearTimeout(timeoutId)
@@ -121,6 +119,7 @@ const IdPasswordFormField = () => {
           className="w-[340px]"
           labelText={'비밀번호'}
           name={'password'}
+          type="password"
           required
         />
       </FormField>

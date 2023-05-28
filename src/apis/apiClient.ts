@@ -6,7 +6,7 @@ const defaultHeader = {
 }
 
 type HttpMethod = 'get' | 'post' | 'put' | 'delete' | 'patch'
-export const apiClient = async <D, R = any>(
+export const apiClient = async <D = any, R = any>(
   url: string,
   method: HttpMethod,
   data?: D,

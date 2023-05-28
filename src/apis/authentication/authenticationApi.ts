@@ -9,4 +9,10 @@ export const authenticationApi = {
 
     return res.data
   },
+
+  signinPassword: async (body: { loginId: string; password: string }) => {
+    const res = await apiClient<any, string>('/signin/password', 'post', body)
+
+    return res.data
+  },
 }
