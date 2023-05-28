@@ -2,7 +2,7 @@ import { RefObject, useRef, useState } from 'react'
 
 export type InputValue = string | null | undefined
 
-interface ValidationResult {
+export interface ValidationResult {
   isValid: boolean
   message: string
 }
@@ -23,18 +23,19 @@ export const useValidation = (
   const validator = () => {
     predicates.forEach((item) => {
       // 유효성 검증 통과
-      if (!item.rule(inputRef.current?.value)) {
+      const inputValue = inputRef.current?.value
+      if (item?.rule && !item.rule(inputValue)) {
         setValidateResult({
           isValid: false,
           message: item.failureMessage,
         })
         return
-      } else {
-        setValidateResult({
-          isValid: true,
-          message: '',
-        })
       }
+
+      setValidateResult({
+        isValid: true,
+        message: '',
+      })
     })
   }
 

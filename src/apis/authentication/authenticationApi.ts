@@ -1,3 +1,18 @@
+import { apiClient } from '../apiClient'
+
 export const authenticationApi = {
-  checkLoginId: () => {},
+  checkLoginId: async (loginId: string) => {
+    const res = await apiClient<string, boolean>(
+      `/validate/login-id-duplicate?loginId=${loginId}`,
+      'get'
+    )
+
+    return res.data
+  },
+
+  signinPassword: async (body: { loginId: string; password: string }) => {
+    const res = await apiClient<any, string>('/signin/password', 'post', body)
+
+    return res.data
+  },
 }

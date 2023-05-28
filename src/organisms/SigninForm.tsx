@@ -1,18 +1,39 @@
 import { FormEvent, useState } from 'react'
 import SelectSignupTypeModal from './SelectSignupTypeModal'
 import { TextInput } from '../atoms/Input'
+import { authenticationApi } from '../apis/authentication/authenticationApi'
+import { useCookies } from 'react-cookie'
+import { useNavigate } from 'react-router-dom'
 
 const PASSWORD_LOGIN_URL = 'http://localhost:8080/login/password'
 export default function SigninForm() {
+  const [cookies, setCookie, removeCookie] = useCookies()
+  const navigator = useNavigate()
   const [openSignupModal, setOpenSignupModal] = useState(false)
 
   const githubLogin = async () => {
-    // window.location.href = 'http://localhost:8080/login/github'
-    alert('깃허브 로그인')
+    // window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}`
+    // window.location.href = 'http://localhost:8080/authorized/github'
+    // const res = await fetch('http://localhost:8080/authorized/github')
+    window.location.href = 'http://localhost:8080/login/github'
+    // console.log('githubLogin res : ', res)
   }
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmitPasswordSignin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    const data: any = {}
+    for (const [k, v] of formData.entries()) {
+      data[k] = v
+    }
+    const token = await authenticationApi.signinPassword(data)
+    // TODO domain, path 설정 필요
+    setCookie('swc_access_token', token, {
+      maxAge: 86400,
+    })
+    navigator('/')
+    // temp
+    alert('로그인 성공')
   }
 
   return (
@@ -25,7 +46,9 @@ export default function SigninForm() {
         className="flex flex-col items-center"
         method="post"
         action={PASSWORD_LOGIN_URL}
-        onSubmit={(e: FormEvent) => handleSubmit(e)}>
+        onSubmit={(e: FormEvent<HTMLFormElement>) =>
+          handleSubmitPasswordSignin(e)
+        }>
         <TextInput
           className="mb-3 w-[340px]"
           name="loginId"
@@ -40,7 +63,8 @@ export default function SigninForm() {
 
         <button
           className="rounded mt-10 p-3 w-[340px] text-white bg-[#00c473]"
-          onClick={() => alert('로그인')}>
+          // onClick={() => alert('로그인')}
+        >
           로그인
         </button>
       </form>
