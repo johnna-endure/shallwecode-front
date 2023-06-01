@@ -12,5 +12,5 @@ type Story = StoryObj<typeof meta>
 
 export default meta
 export const Basic: Story = {
-  args: {},
+  args: { type: 'password' },
 }

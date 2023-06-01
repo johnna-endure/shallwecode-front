@@ -1,13 +1,12 @@
 import { UserSaveRequest } from './userRequest'
-import { SignupType } from '../../organisms/SignupForm'
 import { apiClient } from '../apiClient'
 
 const BACKEND_URL = 'http://localhost:8080'
 export const userApi = {
-  signup: async (data: UserSaveRequest, type: SignupType) => {
+  signup: async (data: UserSaveRequest) => {
     try {
       const response = await apiClient<UserSaveRequest>(
-        `/signup?type=${type.toUpperCase()}`,
+        `/signup}`,
         'post',
         data
       )

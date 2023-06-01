@@ -7,13 +7,7 @@ import { FormField } from '../molecules/Form'
 import { TopLabelTextInput } from '../molecules/TopLabelTextInput'
 import { authenticationApi } from '../apis/authentication/authenticationApi'
 
-export type SignupType = 'password' | 'github'
-
-interface SignupFormProps {
-  type: SignupType
-}
-
-export default (props: SignupFormProps) => {
+export default () => {
   const navigator = useNavigate()
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -23,7 +17,7 @@ export default (props: SignupFormProps) => {
     for (const [k, v] of formData.entries()) {
       body[k] = v.toString()
     }
-    const isSuccess = await userApi.signup(body, props.type)
+    const isSuccess = await userApi.signup(body)
     if (isSuccess) {
       alert('성공')
       navigator('/signin')
@@ -41,7 +35,7 @@ export default (props: SignupFormProps) => {
 
         <form className="flex flex-col items-center" onSubmit={handleSubmit}>
           <div className="flex flex-col items-center gap-2">
-            {props.type === 'password' && <IdPasswordFormField />}
+            <IdPasswordFormField />
             <FormField>
               <TopLabelTextInput
                 className="w-[340px] m-auto"

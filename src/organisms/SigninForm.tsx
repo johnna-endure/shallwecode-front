@@ -12,11 +12,7 @@ export default function SigninForm() {
   const [openSignupModal, setOpenSignupModal] = useState(false)
 
   const githubLogin = async () => {
-    // window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}`
-    // window.location.href = 'http://localhost:8080/authorized/github'
-    // const res = await fetch('http://localhost:8080/authorized/github')
     window.location.href = 'http://localhost:8080/login/github'
-    // console.log('githubLogin res : ', res)
   }
 
   const handleSubmitPasswordSignin = async (e: FormEvent<HTMLFormElement>) => {
@@ -79,7 +75,7 @@ export default function SigninForm() {
 
       {/*부가기능 영역*/}
       <div className="flex justify-between gap-2">
-        <button type="button" onClick={() => setOpenSignupModal(true)}>
+        <button type="button" onClick={() => navigator('/signup')}>
           회원가입
         </button>
         {/*TODO 임시 주석처리*/}
