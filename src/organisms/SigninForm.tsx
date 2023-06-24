@@ -22,13 +22,14 @@ export default function SigninForm() {
     for (const [k, v] of formData.entries()) {
       data[k] = v
     }
-    const token = await authenticationApi.signinPassword(data)
+    const loginToken = await authenticationApi.signinPassword(data)
+    console.log('loginToken : ', loginToken)
     // TODO domain, path 설정 필요
-    setCookie('swc_access_token', token, {
+    setCookie('swc_login_token', loginToken, {
       maxAge: 86400,
     })
     navigator('/')
-    // temp
+
     alert('로그인 성공')
   }
 

@@ -27,11 +27,11 @@ const router = createBrowserRouter([
         path: 'signup',
         element: <SignupPage />,
       },
-      {
-        path: 'authorized/github',
-        element: <Authorized />,
-      },
     ],
+  },
+  {
+    path: '/authorized/github',
+    element: <Authorized />,
   },
 ])
 

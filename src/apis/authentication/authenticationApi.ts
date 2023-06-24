@@ -15,4 +15,12 @@ export const authenticationApi = {
 
     return res.data
   },
+
+  issueLoginToken: async (state: string) => {
+    const res = await apiClient<string, string>(
+      `/issue/loginToken?state=${state}`,
+      'get'
+    )
+    return res.data
+  },
 }
