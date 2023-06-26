@@ -21,6 +21,6 @@ export const authenticationApi = {
       `/issue/loginToken?state=${state}`,
       'get'
     )
-    return res.data
+    return res?.data
   },
 }
