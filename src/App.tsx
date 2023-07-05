@@ -7,6 +7,7 @@ import Authorized from './pages/Authorized'
 import Test from './Test'
 import SignupPage from './pages/SignupPage'
 import ErrorPage from './pages/ErrorPage'
+import MyRepositoriesPage from './pages/MyRepositoriesPage'
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <SignupPage />,
+      },
+      {
+        path: 'my-repositories',
+        element: <MyRepositoriesPage />,
       },
     ],
   },
