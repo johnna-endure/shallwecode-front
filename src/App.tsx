@@ -21,15 +21,15 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: 'signin',
+        path: '/signin',
         element: <SigninPage />,
       },
       {
-        path: 'signup',
+        path: '/signup',
         element: <SignupPage />,
       },
       {
-        path: 'my-repositories',
+        path: '/my-repositories',
         element: <MyRepositoriesPage />,
       },
     ],

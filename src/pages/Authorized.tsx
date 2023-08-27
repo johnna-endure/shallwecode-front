@@ -15,7 +15,6 @@ export default function () {
 
   useEffect(() => {
     authenticationApi.issueLoginToken(state).then((token) => {
-      console.log('issueLoginToken : ', token)
       if (token) {
         setCookie('swc_login_token', token, {
           maxAge: 86400,

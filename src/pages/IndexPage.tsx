@@ -15,6 +15,9 @@ export default (props: any) => {
       인덱스 페이지
       <div>
         <Link to="/signin">로그인 페이지</Link>
+        <div>
+          {isLogin && <Link to="/my-repositories">내 리포지토리 링크</Link>}
+        </div>
 
         <div>로그인 여부 : {isLogin ? 'true' : 'false'}</div>
         {isLogin && <button onClick={handleLogout}>로그아웃</button>}

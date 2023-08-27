@@ -14,7 +14,7 @@ export const apiClient = async <D = any, R = any>(
 ) => {
   const configAddedDefault = {
     ...config,
-    headers: defaultHeader,
+    headers: { ...defaultHeader, ...config?.headers },
     validateStatus: (status: number) => status < 400,
   }
 
