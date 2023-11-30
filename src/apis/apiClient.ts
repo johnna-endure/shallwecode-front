@@ -6,9 +6,14 @@ const defaultHeader = {
 }
 
 type HttpMethod = 'get' | 'post' | 'put' | 'delete' | 'patch'
+/**
+ * type params
+ * - D : request body 타입 (기본 : any)
+ * - R : response body 타입 (기본 : any)
+ */
 export const apiClient = async <D = any, R = any>(
   url: string,
-  method: HttpMethod,
+  method: HttpMethod = 'get',
   data?: D,
   config?: AxiosRequestConfig<D>
 ) => {

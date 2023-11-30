@@ -1,49 +1,28 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
-import IndexPage from './pages/IndexPage'
-import SigninPage from './pages/SigninPage'
-import Authorized from './pages/Authorized'
-import Test from './Test'
-import SignupPage from './pages/SignupPage'
-import ErrorPage from './pages/ErrorPage'
-import MyRepositoriesPage from './pages/MyRepositoriesPage'
+import { IndexPage } from './pages/IndexPage'
+import { ThemeProvider } from '@material-tailwind/react'
+import { AuthorizedOAuth2Page } from './pages/AuthorizedOAuth2Page'
 
 const router = createBrowserRouter([
   {
-    path: '/test',
-    element: <Test />,
+    path: '/',
+    element: <IndexPage />,
+    children: [],
   },
 
   {
-    path: '/',
-    element: <IndexPage />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/signin',
-        element: <SigninPage />,
-      },
-      {
-        path: '/signup',
-        element: <SignupPage />,
-      },
-      {
-        path: '/my-repositories',
-        element: <MyRepositoriesPage />,
-      },
-    ],
-  },
-  {
-    path: '/authorized/github',
-    element: <Authorized />,
+    path: '/authorized',
+    element: <AuthorizedOAuth2Page />,
   },
 ])
 
 function App() {
   return (
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </React.StrictMode>
   )
 }
