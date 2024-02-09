@@ -28,10 +28,10 @@ export const IndexPage = () => {
         {loginToken ? (
           '로그인인 중'
         ) : (
-          <Button onClick={() => login()}>깃허브 로그인 버튼</Button>
+          <Button onClick={() => login()} placeholder="">깃허브 로그인 버튼</Button>
         )}
 
-        <Button onClick={() => fetchRepositories()}>
+        <Button onClick={() => fetchRepositories()} placeholder="">
           리포지토리 목록 조회
         </Button>
       </div>
