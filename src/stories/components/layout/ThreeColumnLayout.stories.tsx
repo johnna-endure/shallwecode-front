@@ -22,7 +22,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const onlyHasFirstContent: Story = {
+export const hasFirstContent: Story = {
   args: {
     rootColor: 'bg-amber-200',
     firstContent: <div className="bg-amber-400">
@@ -35,10 +35,10 @@ export const hasTwoContents: Story = {
   args: {
     rootColor: 'bg-amber-200',
     firstContent: <div className="bg-amber-300">
-      첫번쨰 영역
+      첫번째 영역
     </div>,
     secondContent: <div className="bg-red-100">
-      두번쨰 영역
+      두번째 영역
     </div>,
   },
 }
@@ -47,10 +47,10 @@ export const hasThreeContents: Story = {
   args: {
     rootColor: 'bg-amber-200',
     firstContent: <div className="bg-amber-300">
-      첫번쨰 영역
+      첫번째 영역
     </div>,
     secondContent: <div className="bg-red-100">
-      두번쨰 영역
+      두번째 영역
     </div>,
     thirdContent: <div className="bg-blue-700">
       세번째 영역
