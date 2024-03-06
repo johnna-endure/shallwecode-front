@@ -1,18 +1,26 @@
-import { ThreeColumnLayout } from '../../atoms/layout/ThreeColumnLayout'
+import { ThreeColumnLayout } from '../../layout/ThreeColumnLayout'
 import { HomeBanner } from '../banner/HomeBanner'
 
 interface GlobalHeaderProp {
-  isLogged: boolean
+  height?: string
 }
 
-export const GlobalHeader = ({ isLogged }: GlobalHeaderProp) => {
-  const height = 'h-[100px]'
+export const GlobalHeader = ({ height = 'h-[50px]' }: GlobalHeaderProp) => {
+  const isLogged = false // store 로 빼야된다
   return (
     <>
       <ThreeColumnLayout
-        firstContent={<HomeBanner height={height} />}
-        thirdContent={isLogged ? '로그인됨' : '로그인하기'}
-        height={height}
+        leftContent={
+          <div className="w-full h-full bg-amber-50">
+            <HomeBanner height={height} />
+          </div>
+        }
+        rightContent={
+          <div className={'w-full h-full bg-amber-50'}>
+            {isLogged ? '로그인됨' : '로그인하기'}
+          </div>
+        }
+        rootHeight={height}
       />
     </>
   )

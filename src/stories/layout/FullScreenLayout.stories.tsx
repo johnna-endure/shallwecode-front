@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { FullScreenLayout } from '../../../atoms/layout/FullScreenLayout'
+import { FullScreenLayout } from '../../layout/FullScreenLayout'
 
 const meta = {
-  title: 'atoms/layout/FullScreenLayout',
+  title: 'layout/FullScreenLayout',
   component: FullScreenLayout,
   tags: ['autodocs'],
   argTypes: {

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { OneColumnCenterLayout } from '../../../atoms/layout/OneColumnCenterLayout'
+import { OneColumnCenterLayout } from '../../layout/OneColumnCenterLayout'
 
 const meta = {
-  title: 'atoms/layout/OneColumnCenterLayout',
+  title: 'layout/OneColumnCenterLayout',
   component: OneColumnCenterLayout,
   tags: ['autodocs'],
   argTypes: {

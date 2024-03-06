@@ -8,8 +8,8 @@ interface HomeBannerProp {
 }
 
 export const HomeBanner = ({
-  width = 'w-[200px]',
-  height = 'h-[100px]',
+  width = 'w-[100px]',
+  height = 'h-[50px]',
 }: HomeBannerProp) => {
   const logoSrc = testImage
   const navigate = useNavigate()
