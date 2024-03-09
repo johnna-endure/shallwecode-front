@@ -1,4 +1,4 @@
-interface LoginFormProp {
+interface LoginFormComponent {
   width?: string
   height?: string
 }
@@ -6,7 +6,7 @@ interface LoginFormProp {
 export const LoginForm = ({
   width = 'w-[400px]',
   height = 'h-[500px]',
-}: LoginFormProp) => {
+}: LoginFormComponent) => {
   const rootClassName = `${width} ${height}`
   return (
     <div className={rootClassName}>

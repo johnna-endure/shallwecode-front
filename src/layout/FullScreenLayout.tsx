@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-interface FullScreenContainerProps {
+interface FullScreenLayoutComponent {
   bgColor?: string
   children?: ReactNode
 }
@@ -8,6 +8,6 @@ interface FullScreenContainerProps {
 export const FullScreenLayout = ({
   bgColor = '',
   children,
-}: FullScreenContainerProps) => {
+}: FullScreenLayoutComponent) => {
   return <div className={`w-screen h-screen ${bgColor}`}>{children}</div>
 }

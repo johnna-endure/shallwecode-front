@@ -2,7 +2,7 @@ import { Image } from '../../atoms/image/Image'
 import { useNavigate } from 'react-router-dom'
 import testImage from '../../assets/test_image.png'
 
-interface HomeBannerProp {
+interface HomeBannerComponent {
   width?: string
   height?: string
 }
@@ -10,7 +10,7 @@ interface HomeBannerProp {
 export const HomeBanner = ({
   width = 'w-[100px]',
   height = 'h-[50px]',
-}: HomeBannerProp) => {
+}: HomeBannerComponent) => {
   const logoSrc = testImage
   const navigate = useNavigate()
   const onClick = () => {

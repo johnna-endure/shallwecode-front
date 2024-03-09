@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useCookies } from 'react-cookie'
-import { SWC_LOGIN_TOKEN } from './IndexPage'
+import { SWC_LOGIN_TOKEN } from './RootPage'
 
 export const AuthorizedOAuth2Page = () => {
   const [cookies, _, removeCookie] = useCookies(['SWC_LOGIN_TOKEN'])

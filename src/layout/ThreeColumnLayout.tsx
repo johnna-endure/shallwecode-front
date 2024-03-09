@@ -1,6 +1,6 @@
 import { ReactNode, useRef } from 'react'
 
-interface ThreeColumnLayoutProp {
+interface ThreeColumnLayoutComponent {
   /**
    * 기본값 'w-full'
    */
@@ -25,7 +25,7 @@ export const ThreeColumnLayout = ({
   leftContent,
   centerContent,
   rightContent,
-}: ThreeColumnLayoutProp) => {
+}: ThreeColumnLayoutComponent) => {
   const rootClassName = `flex justify-center ${rootWidth} ${rootHeight} ${rootColor}`
   const rootRef = useRef<HTMLDivElement>(null)
 

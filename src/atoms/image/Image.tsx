@@ -6,7 +6,7 @@ type ObjectFitTailwindcss =
   | 'object-fill'
   | 'object-scale-down'
 
-interface ImageProp {
+interface ImageComponent {
   imgSrc: string
   width: string
   height: string
@@ -20,7 +20,7 @@ export const Image = ({
   height,
   objectFit = 'object-contain',
   onClick,
-}: ImageProp) => {
+}: ImageComponent) => {
   return (
     <img
       className={`${objectFit} ${width} ${height} ${

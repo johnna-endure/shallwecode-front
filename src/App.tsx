@@ -1,15 +1,39 @@
 import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { IndexPage } from './pages/IndexPage'
+import {
+  createBrowserRouter,
+  RouteObject,
+  RouterProvider,
+} from 'react-router-dom'
+import { RootPage } from './pages/RootPage'
 import { ThemeProvider } from '@material-tailwind/react'
 import { AuthorizedOAuth2Page } from './pages/AuthorizedOAuth2Page'
 import { LoginPage } from './pages/LoginPage'
+import { IndexPage } from './pages/IndexPage'
+import { OpenSourceCodeContents } from './components/contents/OpenSourceCodeContents'
+import { OpenSourceDocumentContents } from './components/contents/OpenSourceDocumentContents'
 
-const routes = [
+const routes: RouteObject[] = [
   {
     path: '/',
-    element: <IndexPage />,
-    children: [],
+    element: <RootPage />,
+    children: [
+      {
+        path: '/',
+        // index: true,
+        element: <IndexPage />,
+        children: [
+          {
+            index: true,
+            path: 'code',
+            element: <OpenSourceCodeContents />,
+          },
+          {
+            path: 'document',
+            element: <OpenSourceDocumentContents />,
+          },
+        ],
+      },
+    ],
   },
   {
     path: '/login',
