@@ -40,7 +40,7 @@ export const AsideTab = <ID,>({
 
   return (
     <div
-      className={`h-full flex items-center bg-green-300 cursor-pointer ${bgColorClass}`}
+      className={`h-full flex items-center cursor-pointer ${bgColorClass}`}
       onClick={() => onClickTab(id)}>
       <p className="">{text}</p>
     </div>
