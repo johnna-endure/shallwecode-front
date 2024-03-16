@@ -10,7 +10,7 @@ export const IndexPage = () => {
       rootHeight="h-full"
       leftContent={<LeftAsideTabs />}
       centerContent={
-        <div className="w-full h-full bg-amber-700">
+        <div className="w-full h-full bg-amber-700 overflow-hidden overflow-y-scroll">
           메인 컨텐츠
           <Outlet />
         </div>
