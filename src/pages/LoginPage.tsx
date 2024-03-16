@@ -1,4 +1,4 @@
-import { LoginForm } from '../components/form/LoginForm'
+import { LoginForm } from '../components/contents/form/LoginForm'
 import { FullScreenLayout } from '../layout/FullScreenLayout'
 import { OneColumnCenterLayout } from '../layout/OneColumnCenterLayout'
 

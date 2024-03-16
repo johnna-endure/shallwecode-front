@@ -31,9 +31,9 @@ export const ThreeColumnLayout = ({
 
   return (
     <div ref={rootRef} className={rootClassName}>
-      <div className="w-[20%] overflow-clip">{leftContent}</div>
-      <div className="w-[60%] overflow-clip">{centerContent}</div>
-      <div className="w-[20%]  overflow-clip">{rightContent}</div>
+      <div className="w-[20%]">{leftContent}</div>
+      <div className="w-[60%]">{centerContent}</div>
+      <div className="w-[20%]">{rightContent}</div>
     </div>
   )
 }

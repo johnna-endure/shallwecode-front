@@ -11,6 +11,9 @@ import { LoginPage } from './pages/LoginPage'
 import { IndexPage } from './pages/IndexPage'
 import { OpenSourceCodeContents } from './components/contents/OpenSourceCodeContents'
 import { OpenSourceDocumentContents } from './components/contents/OpenSourceDocumentContents'
+import { MyProfileContent } from './components/contents/MyProfileContent'
+import { MyRepositoriesContent } from './components/contents/MyRepositoriesContent'
+import { MyPage } from './pages/MyPage'
 
 const routes: RouteObject[] = [
   {
@@ -19,7 +22,6 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        // index: true,
         element: <IndexPage />,
         children: [
           {
@@ -30,6 +32,21 @@ const routes: RouteObject[] = [
           {
             path: 'document',
             element: <OpenSourceDocumentContents />,
+          },
+        ],
+      },
+      {
+        path: '/my',
+        element: <MyPage />,
+        children: [
+          {
+            index: true,
+            path: 'profile',
+            element: <MyProfileContent />,
+          },
+          {
+            path: 'repositories',
+            element: <MyRepositoriesContent />,
           },
         ],
       },

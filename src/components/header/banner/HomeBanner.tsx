@@ -1,6 +1,6 @@
-import { Image } from '../../atoms/image/Image'
+import { Image } from '../../../atoms/image/Image'
 import { useNavigate } from 'react-router-dom'
-import testImage from '../../assets/test_image.png'
+import testImage from '../../../assets/test_image.png'
 
 interface HomeBannerComponent {
   width?: string

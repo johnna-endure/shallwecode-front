@@ -31,3 +31,22 @@ export const Image = ({
     />
   )
 }
+
+interface RoundImageComponent {
+  imgSrc: string
+  width: string
+  height: string
+}
+
+export const RoundImage = ({ imgSrc, width, height }: RoundImageComponent) => {
+  return (
+    <div className="rounded-full overflow-clip">
+      <Image
+        imgSrc={imgSrc}
+        width={width}
+        height={height}
+        objectFit="object-cover"
+      />
+    </div>
+  )
+}
