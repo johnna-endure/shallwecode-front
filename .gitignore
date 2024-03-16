@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 *.lock
 *lock.json
+.yarnrc.yml
+.yarn
+yarn.lock
+node_modules

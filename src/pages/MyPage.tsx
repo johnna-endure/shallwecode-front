@@ -1,10 +1,10 @@
-import { ThreeColumnLayout } from '../layout/ThreeColumnLayout'
 import { Outlet } from 'react-router-dom'
+import { ThreeColumnLayout } from '../layout/ThreeColumnLayout'
 import React from 'react'
-import { AsideTabGroup } from '../components/aside/tab/AsideTabGroup'
 import { Tab } from '../components/header/tab/GlobalTabGroup'
+import { AsideTabGroup } from '../components/aside/tab/AsideTabGroup'
 
-export const IndexPage = () => {
+export const MyPage = () => {
   return (
     <ThreeColumnLayout
       rootHeight="h-full"
@@ -19,23 +19,23 @@ export const IndexPage = () => {
   )
 }
 
-type OpenSourcePageTabId = 'CODE' | 'DOCUMENT' | 'CHALLENGE'
+type MyPageTabId = 'PROFILE' | 'MY_REPOSITORIES'
 const LeftAsideTabs = () => {
-  const tabs: Tab<OpenSourcePageTabId>[] = [
+  const tabs: Tab<MyPageTabId>[] = [
     {
-      id: 'CODE',
-      url: 'code',
-      text: 'CODE',
+      id: 'PROFILE',
+      url: 'profile',
+      text: '프로필',
     },
     {
-      id: 'DOCUMENT',
-      url: 'document',
-      text: 'DOCUMENT',
+      id: 'MY_REPOSITORIES',
+      url: 'repositories',
+      text: '내 리포지토리',
     },
   ]
   return (
     <div className="flex flex-col">
-      카테고리 대분류
+      내 페이지 카테고리
       <AsideTabGroup tabs={tabs} />
     </div>
   )

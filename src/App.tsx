@@ -1,44 +1,74 @@
 import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouteObject,
+  RouterProvider,
+} from 'react-router-dom'
+import { RootPage } from './pages/RootPage'
+import { ThemeProvider } from '@material-tailwind/react'
+import { AuthorizedOAuth2Page } from './pages/AuthorizedOAuth2Page'
+import { LoginPage } from './pages/LoginPage'
+import { IndexPage } from './pages/IndexPage'
+import { OpenSourceCodeContents } from './components/contents/OpenSourceCodeContents'
+import { OpenSourceDocumentContents } from './components/contents/OpenSourceDocumentContents'
+import { MyProfileContent } from './components/contents/MyProfileContent'
+import { MyRepositoriesContent } from './components/contents/MyRepositoriesContent'
+import { MyPage } from './pages/MyPage'
 
-import IndexPage from './pages/IndexPage'
-import SigninPage from './pages/SigninPage'
-import Authorized from './pages/Authorized'
-import Test from './Test'
-import SignupPage from './pages/SignupPage'
-import ErrorPage from './pages/ErrorPage'
-
-const router = createBrowserRouter([
-  {
-    path: '/test',
-    element: <Test />,
-  },
-
+const routes: RouteObject[] = [
   {
     path: '/',
-    element: <IndexPage />,
-    errorElement: <ErrorPage />,
+    element: <RootPage />,
     children: [
       {
-        path: 'signin',
-        element: <SigninPage />,
+        path: '/',
+        element: <IndexPage />,
+        children: [
+          {
+            index: true,
+            path: 'code',
+            element: <OpenSourceCodeContents />,
+          },
+          {
+            path: 'document',
+            element: <OpenSourceDocumentContents />,
+          },
+        ],
       },
       {
-        path: 'signup/:type',
-        element: <SignupPage />,
-      },
-      {
-        path: 'authorized/github',
-        element: <Authorized />,
+        path: '/my',
+        element: <MyPage />,
+        children: [
+          {
+            index: true,
+            path: 'profile',
+            element: <MyProfileContent />,
+          },
+          {
+            path: 'repositories',
+            element: <MyRepositoriesContent />,
+          },
+        ],
       },
     ],
   },
-])
+  {
+    path: '/login',
+    element: <LoginPage />,
+  },
+  {
+    path: '/authorized',
+    element: <AuthorizedOAuth2Page />,
+  },
+]
+const router = createBrowserRouter(routes)
 
 function App() {
   return (
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </React.StrictMode>
   )
 }
