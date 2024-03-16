@@ -8,16 +8,16 @@ export const OpenSourceCodeContents = () => {
       오픈소스 CODE 컨텐츠
       <div>검색바</div>
       <div className="flex flex-col gap-2 ">
-        <RepositoryCard />
-        <RepositoryCard />
-        <RepositoryCard />
-        <RepositoryCard />
+        <RepositoryPostCard />
+        <RepositoryPostCard />
+        <RepositoryPostCard />
+        <RepositoryPostCard />
       </div>
     </div>
   )
 }
 
-const RepositoryCard = () => {
+const RepositoryPostCard = () => {
   return (
     <div className="flex justify-center">
       <ContentCard width="w-[660px]" height="h-[350px]">
