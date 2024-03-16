@@ -42,11 +42,7 @@ export const GlobalHeader = ({
                     {/*이미지*/}
 
                     <div className="mx-1">
-                      <RoundImage
-                        imgSrc={testImage}
-                        width="w-[42px]"
-                        height="h-[42px]"
-                      />
+                      <RoundImage imgSrc={testImage} />
                     </div>
 
                     {/*컨텐츠*/}

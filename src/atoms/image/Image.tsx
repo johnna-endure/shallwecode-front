@@ -8,6 +8,7 @@ type ObjectFitTailwindcss =
 
 interface ImageComponent {
   imgSrc: string
+  round?: boolean
   width: string
   height: string
   objectFit?: ObjectFitTailwindcss
@@ -18,14 +19,15 @@ export const Image = ({
   imgSrc,
   width,
   height,
+  round = false,
   objectFit = 'object-contain',
   onClick,
 }: ImageComponent) => {
   return (
     <img
       className={`${objectFit} ${width} ${height} ${
-        onClick && 'cursor-pointer'
-      }`}
+        round ? 'rounded-full' : ''
+      } ${onClick ? 'cursor-pointer' : ''}`}
       src={imgSrc}
       onClick={onClick}
     />
@@ -34,19 +36,16 @@ export const Image = ({
 
 interface RoundImageComponent {
   imgSrc: string
-  width: string
-  height: string
 }
 
-export const RoundImage = ({ imgSrc, width, height }: RoundImageComponent) => {
+export const RoundImage = ({ imgSrc }: RoundImageComponent) => {
   return (
-    <div className="rounded-full overflow-clip">
-      <Image
-        imgSrc={imgSrc}
-        width={width}
-        height={height}
-        objectFit="object-cover"
-      />
-    </div>
+    <Image
+      imgSrc={imgSrc}
+      round={true}
+      width="w-[42px]"
+      height="h-[42px]"
+      objectFit="object-cover"
+    />
   )
 }
