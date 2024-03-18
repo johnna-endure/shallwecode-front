@@ -2,12 +2,12 @@ import { ReactNode, useEffect, useRef, useState } from 'react'
 
 interface ToggleDropdownComponent {
   toggleTarget: ReactNode
-  menuList: ReactNode
+  dropDownComponent: ReactNode
 }
 
 export const ToggleDropdown = ({
   toggleTarget,
-  menuList,
+  dropDownComponent,
 }: ToggleDropdownComponent) => {
   const toggleDivElement = useRef<HTMLDivElement>(null)
   const [showDropdown, setShowDropdown] = useState<boolean>(false)
@@ -27,8 +27,10 @@ export const ToggleDropdown = ({
         <div>{toggleTarget}</div>
       </div>
 
-      {/*드랍다운 리스트*/}
-      {showDropdown && <div className="absolute mt-2">{menuList}</div>}
+      {/*드랍다운 영역*/}
+      {showDropdown ? (
+        <div className="absolute mt-2">{dropDownComponent}</div>
+      ) : null}
     </div>
   )
 }

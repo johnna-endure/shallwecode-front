@@ -1,4 +1,5 @@
 import { RepositoryPostCard } from './card/RepositoryCard'
+import { Tag } from '../../atoms/tag/Tag'
 
 export const OpenSourceCodeContents = () => {
   return (
@@ -16,17 +17,16 @@ export const OpenSourceCodeContents = () => {
           <select>
             <option>태그</option>
           </select>
-          <select>
-            <option>기술 스택</option>
-          </select>
         </div>
 
         {/*태그 view*/}
         <div className="flex gap-3">
-          <div>태그1</div>
-          <div>태그2</div>
+          <Tag name="태그1" />
+          <Tag name="태그2" />
         </div>
       </div>
+
+      {/*리포지토리*/}
       <div className="flex flex-col gap-2 ">
         <RepositoryPostCard />
         <RepositoryPostCard />

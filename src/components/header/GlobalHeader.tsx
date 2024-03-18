@@ -49,7 +49,7 @@ export const GlobalHeader = ({
                     <div>최우석</div>
                   </div>
                 }
-                menuList={
+                dropDownComponent={
                   <div className="z-20">
                     <div onClick={() => navigator('/my/profile')}>프로필</div>
                     <div onClick={() => navigator('/my/repositories')}>
