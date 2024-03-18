@@ -6,7 +6,7 @@ interface ContentCardComponent {
   children: ReactNode
 }
 
-export const ContentCard = ({
+export const WhiteContentContainer = ({
   width,
   height,
   children,

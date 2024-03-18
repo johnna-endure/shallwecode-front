@@ -1,5 +1,6 @@
 import { RepositoryPostCard } from './card/RepositoryCard'
 import { Tag } from '../../atoms/tag/Tag'
+import { TagSelect } from './tag/TagSelect'
 
 export const OpenSourceCodeContents = () => {
   return (
@@ -13,11 +14,7 @@ export const OpenSourceCodeContents = () => {
           </div>
         </div>
         {/*검색 태그 셀렉트*/}
-        <div className="flex gap-2">
-          <select>
-            <option>태그</option>
-          </select>
-        </div>
+        <TagSelect />
 
         {/*태그 view*/}
         <div className="flex gap-3">
