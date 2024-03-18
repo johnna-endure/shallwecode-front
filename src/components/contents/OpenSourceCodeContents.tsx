@@ -9,7 +9,7 @@ export const OpenSourceCodeContents = () => {
         {/*검색바*/}
         <div className="flex justify-center">
           <div>
-            <input type="text" placeholder={'검색바'} />
+            <input type="text" placeholder={'code 검색바'} />
             <button>검색</button>
           </div>
         </div>
