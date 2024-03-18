@@ -11,7 +11,6 @@ export const MyPage = () => {
       leftContent={<LeftAsideTabs />}
       centerContent={
         <div className="w-full h-full bg-amber-700">
-          메인 컨텐츠
           <Outlet />
         </div>
       }
